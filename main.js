@@ -23,13 +23,7 @@ async function initializeApp() {
 function updateDueDate(chore) {
     const interval = chore.intervalDays;
 
-    const [year, month, day] = chore.dueDate.split("-");
-
-    const date = new Date(
-        Number(year),
-        Number(month) - 1,
-        Number(day)
-    );
+    const date = new Date(); // today
 
     date.setDate(date.getDate() + interval);
 
