@@ -1,0 +1,60 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: rgba(0, 255, 238, 0.862);
+    text-align: center;
+    border-top: 3px solid rgba(0, 255, 238, 0.862);
+    border-bottom: 3px solid rgba(0, 255, 238, 0.862);
+    padding: 3px
+}
+
+p {
+    color: gray;
+    text-align: center;
+}
+
+.taskCard {
+    margin-bottom: 10px;
+}
+
+.taskRow {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.assignee, .dueDate {
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+    font-style: italic;
+    margin-left: 25px;
+}
+
+.taskContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.noTasks {
+    grid-column: 1 / -1;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
