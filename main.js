@@ -57,6 +57,15 @@ function getDueText(daysDifference) {
     return `Due in ${daysDifference} Days`;
 }
 
+function formatDate(dateString) {
+
+    if (!dateString) return "Never";
+
+    const [year, month, day] = dateString.split("-");
+
+    return `${month}/${day}/${year}`;
+}
+
 /* -------------------------
    PEOPLE LOOKUP
 --------------------------*/
@@ -135,7 +144,7 @@ function renderTasks(taskArray, container) {
                     ${dueText}
                 </div>
                 <div class="lastCompleted">
-                    Last Completed: ${chore.lastCompleted || "Never"}
+                    Last Completed: ${formatDate(chore.lastCompleted) || "Never"}
                 </div>
             </div>
         `;
