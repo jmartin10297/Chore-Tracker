@@ -134,6 +134,9 @@ function renderTasks(taskArray, container) {
                 <div class="dueDate">
                     ${dueText}
                 </div>
+                <div class="lastCompleted">
+                    Last Completed: ${chore.lastCompleted || "Never"}
+                </div>
             </div>
         `;
     });

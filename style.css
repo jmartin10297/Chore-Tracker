@@ -31,7 +31,7 @@ p {
     text-align: center;
 }
 
-.assignee, .dueDate {
+.assignee, .dueDate, .lastCompleted {
     font-size: 14px;
     color: gray;
     text-align: center;
