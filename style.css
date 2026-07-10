@@ -58,3 +58,20 @@ input[type="checkbox"] {
     height: 15px;
     cursor: pointer;
 }
+
+.header {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+}
+
+.header h1 {
+    grid-column: 2;
+    text-align: center;
+    margin: 0;
+}
+
+#manageButton {
+    grid-column: 3;
+    justify-self: center;
+}
