@@ -63,6 +63,7 @@ input[type="checkbox"] {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
+    position: relative;
 }
 
 .header h1 {
@@ -74,4 +75,40 @@ input[type="checkbox"] {
 #manageButton {
     grid-column: 3;
     justify-self: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#manageMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: #1e1e1e;
+    border: 2px solid rgba(0,255,238,.862);
+    border-radius: 8px;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1000;
+}
+
+#manageMenu.show {
+    display: flex;
+}
+
+#manageMenu button {
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#manageMenu button:hover {
+    background-color: rgba(0,255,238,.15);
 }
