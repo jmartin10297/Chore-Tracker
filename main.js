@@ -242,6 +242,12 @@ const manageMenu = document.getElementById("manageMenu");
 manageButton.addEventListener("click", function () {
     manageMenu.classList.toggle("show");
 });
+
+const manageTasksButton = document.getElementById("manageTasksButton");
+manageTasksButton.addEventListener("click", function () {
+    window.location.href = "masterTaskList.html";
+});
+
 /* -------------------------
    INITIAL LOAD
 --------------------------*/
