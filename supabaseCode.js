@@ -6,19 +6,6 @@ const supabaseClient = window.supabase.createClient(
     supabaseKey
 );
 
-console.log("Supabase client ready");
-
-async function testRead() {
-    const { data, error } = await supabaseClient
-        .from("chores")
-        .select("*");
-
-    console.log("SUPABASE READ RESULT:", data);
-    console.log("SUPABASE ERROR:", error);
-}
-
-testRead();
-
 async function updateChoreInSupabase(chore) {
 
     const { error } = await supabaseClient

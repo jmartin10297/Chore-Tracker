@@ -237,17 +237,6 @@ const overdueTitle = document.getElementById("overdueTitle");
 const dueSoonTitle = document.getElementById("dueSoonTitle");
 const upcomingTitle = document.getElementById("upcomingTitle");
 
-const manageButton = document.getElementById("manageButton");
-const manageMenu = document.getElementById("manageMenu");
-manageButton.addEventListener("click", function () {
-    manageMenu.classList.toggle("show");
-});
-
-const manageTasksButton = document.getElementById("manageTasksButton");
-manageTasksButton.addEventListener("click", function () {
-    window.location.href = "masterTaskList.html";
-});
-
 /* -------------------------
    INITIAL LOAD
 --------------------------*/
