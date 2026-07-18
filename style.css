@@ -64,6 +64,7 @@ input[type="checkbox"] {
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
     position: relative;
+    margin-bottom: 15px;
 }
 
 .header h1 {
@@ -120,4 +121,50 @@ input[type="checkbox"] {
 
 #manageMenu button:hover {
     background-color: rgba(0,255,238,.15);
+}
+
+.taskToolbar {
+    color: rgba(0, 255, 238, 0.862);
+    border-top: 3px solid rgba(0, 255, 238, 0.862);
+    border-bottom: 3px solid rgba(0, 255, 238, 0.862);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.taskToolbar button {
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid rgba(0,255,238,.862);
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.taskToolbar button:hover {
+    background-color: rgba(0,255,238,.15);
+}
+
+.taskNameRow {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.taskDetails {
+    color: gray;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.taskArrow {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 14px;
+    color: rgba(0, 255, 238, 0.862);
 }

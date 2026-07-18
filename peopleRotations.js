@@ -30,3 +30,12 @@ const rotationGroups = {
     kids: [3, 4],
     everyone: [1, 2, 3, 4]
 };
+
+function getPersonName(personId) {
+    const person = people.find(p => p.id === personId);
+    return person ? person.name : "Unknown Person";
+}
+
+function getRotationGroup(groupName) {
+    return rotationGroups[groupName];
+}

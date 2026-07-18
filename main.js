@@ -2,17 +2,7 @@ let chores = [];
 
 async function initializeApp() {
 
-    const { data, error } = await supabaseClient
-        .from("chores")
-        .select("*");
-
-    if (error) {
-        console.error(error);
-        return;
-    }
-
-    chores = data;
-
+    chores = await getAllChores();
     refreshTasks();
 }
 
@@ -67,21 +57,8 @@ function formatDate(dateString) {
 }
 
 /* -------------------------
-   PEOPLE LOOKUP
---------------------------*/
-
-function getPersonName(personId) {
-    const person = people.find(p => p.id === personId);
-    return person ? person.name : "Unknown Person";
-}
-
-/* -------------------------
    ROTATION LOGIC
 --------------------------*/
-
-function getRotationGroup(groupName) {
-    return rotationGroups[groupName];
-}
 
 function getActiveMembers(groupName) {
     const members = getRotationGroup(groupName);

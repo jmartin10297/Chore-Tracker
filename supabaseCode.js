@@ -27,3 +27,16 @@ async function updateChoreInSupabase(chore) {
     }
 }
 
+async function getAllChores() {
+
+    const { data, error } = await supabaseClient
+        .from("chores")
+        .select("*");
+
+    if (error) {
+        console.error(error);
+        return [];
+    }
+
+    return data;
+}
