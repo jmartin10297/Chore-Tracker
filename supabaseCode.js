@@ -32,6 +32,20 @@ async function getAllChores() {
     const { data, error } = await supabaseClient
         .from("chores")
         .select("*")
+
+    if (error) {
+        console.error(error);
+        return [];
+    }
+
+    return data;
+}
+
+async function getActiveChores() {
+
+    const { data, error } = await supabaseClient
+        .from("chores")
+        .select("*")
         .eq("active", true);
 
     if (error) {

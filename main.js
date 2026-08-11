@@ -2,7 +2,7 @@ let chores = [];
 
 async function initializeApp() {
 
-    chores = await getAllChores();
+    chores = await getActiveChores();
     refreshTasks();
 }
 

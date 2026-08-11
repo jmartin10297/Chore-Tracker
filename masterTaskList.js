@@ -15,15 +15,27 @@ async function initializeMasterTaskList() {
 
             <div class="taskNameRow" data-id="${chore.id}">
                 <span class="taskArrow">▶</span>
-                ${chore.name}
+                ${chore.name} ${chore.active ? "" : "(Inactive)"}
             </div>
 
             <div class="taskDetails hidden" id="details-${chore.id}">
+                <div>Status: ${chore.active ? "Active" : "Inactive"}</div>
                 <div>Recurs Every ${chore.intervalDays} Days</div>
                 <div>Next Due: ${chore.dueDate}</div>
                 <div>Assigned To: ${getPersonName(chore.assignedTo)}</div>
                 <div>Rotation Group: ${chore.rotationGroup}</div>
                 <div>Last Completed: ${chore.lastCompleted || "Never"}</div>
+
+
+                <div class="taskActions">
+                <button class="editButton" data-id="${chore.id}">
+                    Edit
+                </button>
+
+                <button class="removeButton" data-id="${chore.id}">
+                    Remove
+                </button>
+                </div>
             </div>
 
         </div>
