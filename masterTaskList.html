@@ -20,11 +20,39 @@
     </div>
     </div>
     <div class="taskToolbar">
-        <button>Add Task</button>
-        <button>Search</button>
-        <button>Filter</button>
+        <button id="addTaskButton">Add Task</button>
+        <button id="searchButton">Search</button>
+        <button id="filterButton">Filter</button>
     </div>
     <div id="taskListContainer" class="taskContainer"></div>
+    <div id="formBackdrop" class="hidden"></div>
+    <div id="taskForm" class="taskForm hidden">
+
+    <h2 id="taskFormTitle">Edit Task</h2>
+
+    <label for="taskNameInput">Task Name</label>
+    <input type="text" id="taskNameInput">
+
+    <label for="assignedToInput">Assigned To</label>
+    <select id="assignedToInput"></select>
+
+    <label for="activeInput">Active</label>
+    <input type="checkbox" id="activeInput">
+
+    <label for="intervalInput">Interval (days)</label>
+    <input type="number" id="intervalInput">
+
+    <label for="dueDateInput">Next Due Date</label>
+    <input type="date" id="dueDateInput">
+
+    <label for="rotationGroupInput">Rotation Group</label>
+    <select id="rotationGroupInput"></select>
+
+    <button id="cancelEditButton">Cancel</button>
+    <button id="saveEditButton">Save</button>
+
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabaseCode.js"></script>
     <script src="navigation.js"></script>

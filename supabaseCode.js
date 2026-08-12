@@ -23,8 +23,14 @@ async function updateChoreInSupabase(chore) {
         .eq("id", chore.id);
 
     if (error) {
+
         console.error("UPDATE ERROR:", error);
+
+        return false;
+
     }
+
+    return true;
 }
 
 async function getAllChores() {
@@ -54,4 +60,50 @@ async function getActiveChores() {
     }
 
     return data;
+}
+
+async function deleteChoreFromSupabase(choreId) {
+
+    console.log("Attempting to delete chore:", choreId);
+
+    const { error } = await supabaseClient
+        .from("chores")
+        .delete()
+        .eq("id", choreId);
+
+    if (error) {
+        console.error("DELETE ERROR:", error);
+        return false;
+    }
+
+    console.log("Delete successful");
+
+    return true;
+}
+
+async function addChoreToSupabase(chore) {
+
+    const { data, error } = await supabaseClient
+        .from("chores")
+        .insert({
+            name: chore.name,
+            assignedTo: chore.assignedTo,
+            dueDate: chore.dueDate,
+            active: chore.active,
+            intervalDays: chore.intervalDays,
+            rotationGroup: chore.rotationGroup,
+            completed: chore.completed,
+            lastCompleted: chore.lastCompleted
+        })
+        .select()
+        .single();
+
+    if (error) {
+        console.error("INSERT ERROR:", error);
+        return false;
+    }
+
+    console.log("Successfully added chore:", data);
+
+    return true;
 }
